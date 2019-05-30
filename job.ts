@@ -25,6 +25,7 @@ export const updateConfig = (environment: string = 'default') => {
         { src: `${envFolder}/fastlane/googlePlaySecretKey.json`, des: `fastlane/googlePlaySecretKey.json` },
         { src: `${envFolder}/ios/GoogleService-Info.plist`, des: `ios/mobile/GoogleService-Info.plist` },
         { src: `${envFolder}/job_config.ts`, des: `job_config.ts` },
+        { src: `${envFolder}/override.config.ts`, des: `src/config/override.config.ts` },
 
     ];
     for (const copyTask of copyTasks) {
