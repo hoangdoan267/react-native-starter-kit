@@ -3,12 +3,12 @@ import { overrideConfig } from './override.config';
 export const config = {
   appName: 'mobile',
   android: {
-    version: '0.1.0',
-    versionCode: 1,
+    version: '0.1.1',
+    versionCode: 2,
   },
   ios: {
-    version: '0.1.0',
-    build: 1,
+    version: '0.1.1',
+    build: 2,
   },
   i18n: {
     vn: 'vn',

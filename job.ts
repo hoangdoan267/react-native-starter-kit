@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { config } from './src/config';
 
 interface CopyTask {
     src: string;
@@ -15,8 +16,7 @@ interface ReplaceTask {
     }[];
 }
 
-export const run = () => {
-    const environment = process.argv[2] ? process.argv[2] : 'default';
+export const updateConfig = (environment: string = 'default') => {
     const envFolder = `app_configuration/environment/${environment}`;
     const copyTasks: CopyTask[] = [
         { src: `${envFolder}/android/app.keystore`, des: `android/app/app.keystore` },
@@ -128,6 +128,63 @@ export const run = () => {
         fs.writeFileSync(replaceTask.src, newContent);
         // tslint:disable-next-line:no-console
         console.log(`updated ${replaceTask.src}`);
+    }
+};
+
+export const updateVersion = () => {
+    const replaceTasks: ReplaceTask[] = [
+        {
+            src: path.resolve(__dirname, `./android/app/build.gradle`),
+            replaces: [
+                {
+                    old: /versionCode [0-9]*/,
+                    new: `versionCode ${config.android.versionCode}`,
+                },
+                {
+                    old: /versionName "[0-9,.]*"/,
+                    new: `versionName "${config.android.version}"`,
+                },
+            ],
+        },
+        {
+            src: path.resolve(__dirname, `./ios/mobile/Info.plist`),
+            replaces: [
+                {
+                    old: /<key>CFBundleVersion<\/key>[\n,	, ]*<string>[\w, ,.,-]*<\/string>/,
+                    new: `<key>CFBundleVersion</key>\n	<string>${config.ios.build}</string>`,
+                },
+                {
+                    old: /<key>CFBundleShortVersionString<\/key>[\n,	, ]*<string>[\w, ,.,-]*<\/string>/,
+                    new: `<key>CFBundleShortVersionString<\/key>\n	<string>${config.ios.version}</string>`,
+                },
+            ],
+        },
+    ];
+    for (const replaceTask of replaceTasks) {
+        if (!fs.existsSync(replaceTask.src)) {
+            continue;
+        }
+        const oldContent = fs.readFileSync(replaceTask.src, { encoding: 'utf8' });
+
+        let newContent = oldContent;
+        for (const replace of replaceTask.replaces) {
+            newContent = newContent.replace(replace.old, replace.new);
+        }
+
+        fs.writeFileSync(replaceTask.src, newContent);
+        // tslint:disable-next-line:no-console
+        console.log(`updated ${replaceTask.src}`);
+    }
+};
+
+const run = () => {
+    const command = process.argv[2];
+    switch (command) {
+        case 'updateVersion':
+            updateVersion();
+            break;
+        default:
+            updateConfig(command);
     }
 };
 
