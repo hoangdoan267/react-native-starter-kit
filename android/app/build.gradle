@@ -108,7 +108,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reactnative.starterkit"
+        applicationId "com.reactnative.yourappid"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57_5"

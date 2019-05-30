@@ -1,6 +1,6 @@
 <resources>
 	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">deployment-key-here</string>
-    <string name="app_name">Mobile Starter Kit</string>
-    <string name="facebook_app_id">1842008296094931</string>
-    <string name="fb_login_protocol_scheme">fb1842008296094931</string>
+    <string name="app_name">Your app name</string>
+    <string name="facebook_app_id">yourfbid</string>
+    <string name="fb_login_protocol_scheme">fbyourfbid</string>
 </resources>

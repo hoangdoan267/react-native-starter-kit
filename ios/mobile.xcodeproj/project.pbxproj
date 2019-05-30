@@ -1864,7 +1864,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.techkids.mobiletemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactnative.yourappid;
 				PRODUCT_NAME = mobile;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1899,7 +1899,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.techkids.mobiletemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactnative.yourappid;
 				PRODUCT_NAME = mobile;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";

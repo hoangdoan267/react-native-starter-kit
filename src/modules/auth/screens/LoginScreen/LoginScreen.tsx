@@ -62,7 +62,7 @@ export const LoginScreen = ({ componentId }: Props) => {
             <LanguageSelection />
             <View center>
                 <Text text200 marginT-20>
-                    {t('login.version')} Android: {config.version.android}, iOS: {config.version.ios}
+                    {t('login.version')} Android: {config.android.version}, iOS: {config.ios.version}
                 </Text>
             </View>
         </View>

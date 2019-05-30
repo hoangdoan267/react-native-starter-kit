@@ -30,7 +30,6 @@ bin/
 .gradle
 local.properties
 *.iml
-debug
 
 # Visual Studio Code
 #
@@ -45,7 +44,6 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
 
 # fastlane
 #
@@ -65,5 +63,8 @@ buck-out/
 Pods
 
 # credentials
-google-services.json
-googlePlaySecrectKey.json
+app_configuration/environment/production
+android/*/*.keystore
+android/*/google-services.json
+fastlane/googlePlaySecrectKey.json
+ios/mobile/GoogleService-Info.plist

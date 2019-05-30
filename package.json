@@ -42,6 +42,8 @@
     "babel-jest": "^24.7.1",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.4"
   },
@@ -49,7 +51,7 @@
     "preset": "react-native"
   },
   "name": "mobile",
-  "precommit": "yarn lint",
+  "precommit": "lint",
   "private": true,
   "scripts": {
     "android": "ANDROID_HOME=${HOME}/Library/Android/sdk react-native run-android --variant debug",
@@ -69,6 +71,7 @@
     "ios:codepush": "code-push release-react techkids/mobile-template-android",
     "ios:codepush:prod": "appcenter codepush promote -a techkids/mobile-template-ios -s Staging -d Production ",
     "ios:production": "bundle exec fastlane ios production",
+    "job": "ts-node job.ts",
     "lint": "tsc -p . && tslint -p .",
     "start": "yarn lint && node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",

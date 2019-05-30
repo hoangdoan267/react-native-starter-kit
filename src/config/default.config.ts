@@ -2,9 +2,13 @@ import { overrideConfig } from './override.config';
 
 export const config = {
   appName: 'mobile',
-  version: {
-    android: '0.1.0',
-    ios: '0.1.0',
+  android: {
+    version: '0.1.0',
+    versionCode: 1,
+  },
+  ios: {
+    version: '0.1.0',
+    build: 1,
   },
   i18n: {
     vn: 'vn',

@@ -53,8 +53,8 @@ export const HomeScreen = ({ componentId, sharks, dolphins }: Props) => {
 
     return <BaseLayout>
         <Text bg-red30 blue50 text50>{t('home.hello')}, {userName}</Text>
-        <Text bg-red30 blue50 text80>Android Version: {config.version.android}</Text>
-        <Text bg-red30 blue50 text80>iOS Version: {config.version.ios}</Text>
+        <Text bg-red30 blue50 text80>Android Version: {config.android.version}</Text>
+        <Text bg-red30 blue50 text80>iOS Version: {config.ios.version}</Text>
         <Text bg-red30 blue50 text80>Sharks: {sharks ? sharks.count : -1}</Text>
         <Text bg-red30 blue50 text80>Dolphins: {dolphins ? dolphins.count : -1}</Text>
         <Icon name="google-home" size={30} />
