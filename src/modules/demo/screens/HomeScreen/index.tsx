@@ -29,6 +29,7 @@ export const HomeScreen = ({ componentId, sharks, dolphins }: Props) => {
                     && user.providerData.length > 0
                     && user.providerData[0].providerId === 'google.com'
                     && await GoogleSignin.isSignedIn()) {
+                    await GoogleSignin.revokeAccess();
                     await GoogleSignin.signOut();
                 }
                 await auth().signOut();
