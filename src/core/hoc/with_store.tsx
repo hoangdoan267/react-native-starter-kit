@@ -1,11 +1,11 @@
 import React, { Component, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '../../store';
-import { getPersistor } from '@rematch/persist';
+import { persistStore } from 'redux-persist';
 // tslint:disable-next-line:no-submodule-imports
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
-const persistor = getPersistor();
+const persistor = persistStore(store);
 
 export const withStore = (WrappedComponent: any) => {
     return class extends Component {
