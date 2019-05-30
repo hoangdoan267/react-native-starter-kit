@@ -2,10 +2,10 @@ import firebase from 'react-native-firebase';
 import codePush from 'react-native-code-push';
 import { Platform } from 'react-native';
 import { config } from '../../config';
-import { showNotification } from '..';
-import { recordError } from '../helpers/record_error';
+import { showNotification, catchAndLog } from '..';
 
 let isTester = false;
+const TESTERS_COLLECTION = 'testers';
 
 const onSyncStatusChange = (syncStatus: any) => {
     let status = '';
@@ -48,7 +48,7 @@ const checkIsTester = async () => {
         if (!firebase.auth().currentUser) {
             return false;
         }
-        const tester = await firebase.firestore().collection('testers').doc(firebase.auth().currentUser!.uid).get();
+        const tester = await firebase.firestore().collection(TESTERS_COLLECTION).doc(firebase.auth().currentUser!.uid).get();
         if (tester.exists) {
             return true;
         }
@@ -58,25 +58,21 @@ const checkIsTester = async () => {
     }
 };
 
-export const checkUpdate = async () => {
-    try {
-        const useStagingKey = await checkIsTester();
-        isTester = useStagingKey;
-        const deploymentKey = Platform.OS === 'android'
-            ? useStagingKey
-                ? config.codePush.android.stagingKey
-                : config.codePush.android.productionKey
-            : useStagingKey
-                ? config.codePush.ios.stagingKey
-                : config.codePush.ios.productionKey;
-        await codePush.sync(
-            {
-                deploymentKey,
-                installMode: codePush.InstallMode.ON_NEXT_RESUME
-            },
-            onSyncStatusChange,
-        );
-    } catch (error) {
-        recordError(error);
-    }
-};
+export const checkUpdate = catchAndLog(async () => {
+    const useStagingKey = await checkIsTester();
+    isTester = useStagingKey;
+    const deploymentKey = Platform.OS === 'android'
+        ? useStagingKey
+            ? config.codePush.android.stagingKey
+            : config.codePush.android.productionKey
+        : useStagingKey
+            ? config.codePush.ios.stagingKey
+            : config.codePush.ios.productionKey;
+    await codePush.sync(
+        {
+            deploymentKey,
+            installMode: codePush.InstallMode.ON_NEXT_RESUME
+        },
+        onSyncStatusChange,
+    );
+});
