@@ -17,7 +17,7 @@ interface ReplaceTask {
 }
 
 export const updateConfig = (environment: string = 'default') => {
-    const envFolder = `app_configuration/environment/${environment}`;
+    const envFolder = `app_configuration/environments/${environment}`;
     const copyTasks: CopyTask[] = [
         { src: `${envFolder}/android/app.keystore`, des: `android/app/app.keystore` },
         { src: `${envFolder}/android/google-services.json`, des: `android/app/google-services.json` },
@@ -39,12 +39,12 @@ export const updateConfig = (environment: string = 'default') => {
 
     // get google
     // tslint:disable-next-line:max-line-length
-    const googleServiceInfoContent = fs.readFileSync(`app_configuration/environment/${environment}/ios/GoogleService-Info.plist`, { encoding: 'utf8' });
+    const googleServiceInfoContent = fs.readFileSync(`${envFolder}/ios/GoogleService-Info.plist`, { encoding: 'utf8' });
     const googleReverseClientId = googleServiceInfoContent.match(/com.googleusercontent.apps.[\w,-]*/);
     // tslint:disable-next-line:no-console
     console.log(googleReverseClientId ? googleReverseClientId[0] : '');
 
-    const jobConfig = JSON.parse(fs.readFileSync(`app_configuration/environment/${environment}/job_config.json`, { encoding: 'utf8' }));
+    const jobConfig = JSON.parse(fs.readFileSync(`${envFolder}/job_config.json`, { encoding: 'utf8' }));
     const replaceTasks: ReplaceTask[] = [
         {
             src: path.resolve(__dirname, `./android/app/build.gradle`),
