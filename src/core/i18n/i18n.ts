@@ -24,10 +24,10 @@ export const initializeI18Next = async () => {
         .use(initReactI18next)
         .init({
             fallbackLng: 'en',
-            debug: true,
+            debug: __DEV__,
             resources: {
-                en,
-                vi,
+                en: { translation: en },
+                vi: { translation: vi },
             },
         });
 
