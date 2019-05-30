@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native-ui-lib';
 import { useTranslation } from 'react-i18next';
 import { TouchableOpacity } from 'react-native';
-import { Language } from '../../../../../core';
+import { Language } from '../../../../../../core';
 
 export const LanguageSelection = () => {
     const { i18n } = useTranslation();

@@ -1,11 +1,12 @@
+
 import React from 'react';
 import { View, Button } from 'react-native-ui-lib';
 import { useTranslation } from 'react-i18next';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
 import firebase from 'react-native-firebase';
-import { LoginType, catchAndLog } from '../../../../../core';
-import { navigationService } from '../../../../../services';
+import { LoginType, catchAndLog, LOGIN_TYPE_FACEBOOK } from '../../../../../../core';
+import { navigationService } from '../../../../../../services';
 
 interface Props {
     isBusy: boolean;
@@ -44,12 +45,12 @@ export const SocialLogin = ({ isBusy, setIsBusy }: Props) => {
         async (loginType: LoginType) => {
             setIsBusy(true);
 
-            const credential = loginType === 'facebook'
+            const credential = loginType === LOGIN_TYPE_FACEBOOK
                 ? await loginFacebookAndGetCredential()
                 : await loginGoogleAndGetCredential();
             // login with credential
             await firebase.auth().signInWithCredential(credential);
-            firebase.analytics().logEvent(loginType === 'facebook' ? 'LOGIN_FACEBOOK' : 'LOGIN_GOOGLE');
+            firebase.analytics().logEvent(loginType === LOGIN_TYPE_FACEBOOK ? 'LOGIN_FACEBOOK' : 'LOGIN_GOOGLE');
 
             navigationService.navigateToHome();
         },

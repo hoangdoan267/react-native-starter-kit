@@ -1,10 +1,8 @@
 import createRematchPersist from '@rematch/persist';
-import { dolphins } from './models/dolphins';
-import { sharks } from './models/sharks';
+import { models } from './models';
 import { init, RematchRootState } from '@rematch/core';
 // tslint:disable-next-line:no-submodule-imports
 import storage from 'redux-persist/lib/storage';
-import * as models from './models';
 
 const persistPlugin = createRematchPersist({
     whitelist: ['sharks'],
@@ -15,10 +13,7 @@ const persistPlugin = createRematchPersist({
 
 export const store = init({
     plugins: [persistPlugin],
-    models: {
-        sharks,
-        dolphins,
-    },
+    models,
 });
 
 export type Store = typeof store;

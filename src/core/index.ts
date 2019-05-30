@@ -10,5 +10,5 @@ export * from './helpers/recordError';
 export * from './hoc/withLazyLoad';
 export * from './hoc/withStore';
 export * from './codePush/checkUpdate';
-export * from './types/ScreenProps';
+export * from './interfaces/ScreenProps';
 export * from './types/LoginType';

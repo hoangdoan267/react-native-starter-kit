@@ -66,5 +66,5 @@ Pods
 app_configuration/environment/production
 android/*/*.keystore
 android/*/google-services.json
-fastlane/googlePlaySecrectKey.json
+fastlane/googlePlaySecretKey.json
 ios/mobile/GoogleService-Info.plist

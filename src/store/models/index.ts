@@ -1,2 +1,6 @@
-export * from './sharks';
-export * from './dolphins';
+import { sharks } from './sharks';
+import { dolphins } from './dolphins';
+export const models = {
+    sharks,
+    dolphins,
+};

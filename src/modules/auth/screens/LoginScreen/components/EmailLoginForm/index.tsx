@@ -3,8 +3,8 @@ import { Text, TextField, View } from 'react-native-ui-lib';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
-import { catchAndLog, showNotification } from '../../../../../core';
-import { screenNames } from '../../../..';
+import { catchAndLog, showNotification } from '../../../../../../core';
+import { screenNames } from '../../../../..';
 import firebase from 'react-native-firebase';
 
 interface Props {
