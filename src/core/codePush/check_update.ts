@@ -3,7 +3,7 @@ import codePush from 'react-native-code-push';
 import { Platform } from 'react-native';
 import { config } from '../../config';
 import { showNotification } from '..';
-import { recordError } from '../helpers/recordError';
+import { recordError } from '../helpers/record_error';
 
 let isTester = false;
 

@@ -1,9 +1,9 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { language as languageEn } from './locales/en';
-import { language as languageVi } from './locales/vi';
+import en from './locales/en.json';
+import vi from './locales/vi.json';
 
-export const Language = {
+export const languages = {
     en: 'en',
     vi: 'vi',
 };
@@ -26,8 +26,8 @@ export const initializeI18Next = async () => {
             fallbackLng: 'en',
             debug: true,
             resources: {
-                en: languageEn,
-                vi: languageVi,
+                en,
+                vi,
             },
         });
 

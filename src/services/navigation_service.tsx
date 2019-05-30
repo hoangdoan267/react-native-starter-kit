@@ -64,7 +64,7 @@ const navigateToHome = () => {
                             options: {
                                 bottomTab: {
                                     text: i18n.t('common.tab1'),
-                                    icon: icons('about'),
+                                    icon: icons.about,
                                     selectedIconColor: 'red',
                                     testID: 'FIRST_TAB_BAR_BUTTON'
                                 },
@@ -84,7 +84,7 @@ const navigateToHome = () => {
                             options: {
                                 bottomTab: {
                                     text: i18n.t('common.tab2'),
-                                    icon: icons('air_play'),
+                                    icon: icons.air_play,
                                     selectedIconColor: 'red',
                                     testID: 'SECOND_TAB_BAR_BUTTON'
                                 }
@@ -99,7 +99,7 @@ const navigateToHome = () => {
                             options: {
                                 bottomTab: {
                                     text: i18n.t('common.tab3'),
-                                    icon: icons('airdrop'),
+                                    icon: icons.airdrop,
                                     selectedIconColor: 'red',
                                     testID: 'THIRD_TAB_BAR_BUTTON'
                                 }
