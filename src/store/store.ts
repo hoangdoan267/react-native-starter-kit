@@ -1,8 +1,7 @@
 import createRematchPersist from '@rematch/persist';
 import { models } from './models';
 import { init, RematchRootState } from '@rematch/core';
-// tslint:disable-next-line:no-submodule-imports
-import storage from 'redux-persist/lib/storage';
+import storage from '@react-native-community/async-storage';
 
 const persistPlugin = createRematchPersist({
     whitelist: ['sharks'],

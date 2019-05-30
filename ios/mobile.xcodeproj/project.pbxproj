@@ -49,6 +49,7 @@
 		4A92A2B2228A7AD700455DF2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA77909227BFA6A00E1ECA4 /* libz.tbd */; };
 		4AA7783C227BF80600E1ECA4 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AED05B0227312A100F721C5 /* libRCTFBSDK.a */; };
 		4AA778C6227BF99C00E1ECA4 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA778C5227BF98600E1ECA4 /* libRNGoogleSignin.a */; };
+		4AB211A2229FDA490044BB61 /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB2119C229FDA360044BB61 /* libRNCAsyncStorage.a */; };
 		4AFD10E32284465800ACEBC9 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFD10DE2284463900ACEBC9 /* libRNBlur.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A08A7B7431C79FC7421BC2CD /* libPods-mobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC1A724A81313005AB9EB2F /* libPods-mobile-tvOSTests.a */; };
@@ -383,6 +384,13 @@
 			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
 			remoteInfo = RNGoogleSignin;
 		};
+		4AB2119B229FDA360044BB61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AB21166229FDA360044BB61 /* RNCAsyncStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCAsyncStorage;
+		};
 		4AED05AF227312A100F721C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4AED05AB227312A000F721C5 /* RCTFBSDK.xcodeproj */;
@@ -483,6 +491,7 @@
 		4AA77905227BFA4E00E1ECA4 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		4AA77907227BFA5600E1ECA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4AA77909227BFA6A00E1ECA4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4AB21166229FDA360044BB61 /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
 		4AED05AB227312A000F721C5 /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		4AFD10AF2284463900ACEBC9 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
 		51DF22D3B84CD992839E89BD /* Pods-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile.debug.xcconfig"; path = "Target Support Files/Pods-mobile/Pods-mobile.debug.xcconfig"; sourceTree = "<group>"; };
@@ -527,6 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB211A2229FDA490044BB61 /* libRNCAsyncStorage.a in Frameworks */,
 				4A92A2B2228A7AD700455DF2 /* libz.tbd in Frameworks */,
 				4A92A2B1228A7ABE00455DF2 /* libCodePush.a in Frameworks */,
 				4A3240AF2289632B00AADEE2 /* libSplashScreen.a in Frameworks */,
@@ -795,6 +805,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4AB21167229FDA360044BB61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AB2119C229FDA360044BB61 /* libRNCAsyncStorage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4AED05AC227312A000F721C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +864,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4AB21166229FDA360044BB61 /* RNCAsyncStorage.xcodeproj */,
 				4A92A276228A7AA800455DF2 /* CodePush.xcodeproj */,
 				4A3240A92289632100AADEE2 /* SplashScreen.xcodeproj */,
 				4A32406E2289421400AADEE2 /* RNVectorIcons.xcodeproj */,
@@ -1139,6 +1158,10 @@
 				{
 					ProductGroup = 4AFD10B02284463900ACEBC9 /* Products */;
 					ProjectRef = 4AFD10AF2284463900ACEBC9 /* RNBlur.xcodeproj */;
+				},
+				{
+					ProductGroup = 4AB21167229FDA360044BB61 /* Products */;
+					ProjectRef = 4AB21166229FDA360044BB61 /* RNCAsyncStorage.xcodeproj */;
 				},
 				{
 					ProductGroup = 4A209EB5226728AA0004BE9A /* Products */;
@@ -1474,6 +1497,13 @@
 			fileType = archive.ar;
 			path = libRNGoogleSignin.a;
 			remoteRef = 4AA778C4227BF98600E1ECA4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4AB2119C229FDA360044BB61 /* libRNCAsyncStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCAsyncStorage.a;
+			remoteRef = 4AB2119B229FDA360044BB61 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		4AED05B0227312A100F721C5 /* libRCTFBSDK.a */ = {
