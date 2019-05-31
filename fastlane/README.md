@@ -16,16 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## Android
-### android increaseVersion
-```
-fastlane android increaseVersion
-```
-Increase version name
 ### android build
 ```
 fastlane android build
 ```
 Build the Android application.
+### android alpha
+```
+fastlane android alpha
+```
+Ship to Playstore Alpha.
 ### android beta
 ```
 fastlane android beta
@@ -45,24 +45,14 @@ Ship to Playstore Production.
 fastlane ios certificates
 ```
 Fetch certificates and provisioning profiles
-### ios increaseVersion
-```
-fastlane ios increaseVersion
-```
-Auto snapshots
-### ios screenshots
-```
-fastlane ios screenshots
-```
-Auto snapshots
 ### ios build
 ```
 fastlane ios build
 ```
 Build the iOS application.
-### ios beta
+### ios uploadToTestflight
 ```
-fastlane ios beta
+fastlane ios uploadToTestflight
 ```
 Ship to Appstore Testflight.
 ### ios production

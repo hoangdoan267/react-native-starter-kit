@@ -179,7 +179,7 @@ export const updateVersion = () => {
 const run = () => {
     const command = process.argv[2];
     switch (command) {
-        case 'updateVersion':
+        case 'update-version':
             updateVersion();
             break;
         default:

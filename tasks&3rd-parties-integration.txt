@@ -4,7 +4,7 @@
 4. react-native-ui-lib: UI components with tabs (done)
     https://github.com/react-native-community/react-native-blur
 ***5. test
-***6. ProGuard (done)
+6. ProGuard (done)
 7. codepush (done) staging vs production
     https://docs.microsoft.com/en-us/appcenter/distribution/codepush/cli
     appcenter codepush deployment list -a techkids/mobile-template-android -k
@@ -17,7 +17,7 @@
     appcenter codepush deployment history Staging -a techkids/mobile-template-ios => show history 
 ***8. fastlane (WIP)
 9. react-i18next - internationalization (done)
-***10. build release (android/ios) (WIP)
+10. build release (android/ios) (done)
 11. formik + yup: form validation (done)
     https://gist.github.com/jaredpalmer/a8faaab12bc37e6a160a3c9549664f0b => async validation
 12. react-native-fbsdk: login facebook (done)

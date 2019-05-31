@@ -11,7 +11,7 @@ import org.wonday.orientation.OrientationPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.auth.RNFirebaseAuthPackage; 
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
@@ -38,7 +38,6 @@ import com.facebook.appevents.AppEventsLogger;
 
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,11 +49,12 @@ public class MainApplication extends NavigationApplication {
       @javax.annotation.Nullable
       @Override
       protected String getJSBundleFile() {
-          return CodePush.getJSBundleFile();
+        return CodePush.getJSBundleFile();
       }
+
       @Override
       protected String getJSMainModuleName() {
-          return "index";
+        return "index";
       }
     };
     return new ReactGateway(this, isDebug(), host);
@@ -62,7 +62,7 @@ public class MainApplication extends NavigationApplication {
 
   @Override
   public boolean isDebug() {
-      return BuildConfig.DEBUG;
+    return BuildConfig.DEBUG;
   }
 
   private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
@@ -72,43 +72,43 @@ public class MainApplication extends NavigationApplication {
   }
 
   protected List<ReactPackage> getPackages() {
-      // Add additional packages you require here
-      // No need to add RnnPackage and MainReactPackage
-      return Arrays.<ReactPackage>asList(
-        new MainReactPackage(),
-            new AsyncStoragePackage(),
-        new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
-        new SplashScreenReactPackage(),
-        new VectorIconsPackage(),
-        new OrientationPackage(),
-        new BlurViewPackage(),
-        new RNFirebasePackage(),
-        new RNFirebaseAuthPackage(),
-        new RNFirebaseFirestorePackage(),
-        new RNFirebaseMessagingPackage(),
-        new RNFirebaseNotificationsPackage(),
-        new HighlighterViewPackage(),
-        new TextInputDelKeyHandlerPackage(),
-        new WheelPickerPackage(),
-        new FBSDKPackage(mCallbackManager),
-        new RNGoogleSigninPackage(),
-        new RNFirebaseAnalyticsPackage(),
-        new RNFirebaseCrashlyticsPackage()
-      );
+    // Add additional packages you require here
+    // No need to add RnnPackage and MainReactPackage
+    return Arrays.<ReactPackage>asList(
+      new MainReactPackage(), 
+      new AsyncStoragePackage(),
+      new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
+      new SplashScreenReactPackage(), 
+      new VectorIconsPackage(), 
+      new OrientationPackage(), 
+      new BlurViewPackage(),
+      new RNFirebasePackage(), 
+      new RNFirebaseAuthPackage(), 
+      new RNFirebaseFirestorePackage(),
+      new RNFirebaseMessagingPackage(), 
+      new RNFirebaseNotificationsPackage(), 
+      new HighlighterViewPackage(),
+      new TextInputDelKeyHandlerPackage(), 
+      new WheelPickerPackage(), 
+      new FBSDKPackage(mCallbackManager),
+      new RNGoogleSigninPackage(), 
+      new RNFirebaseAnalyticsPackage(), 
+      new RNFirebaseCrashlyticsPackage()
+    );
   }
 
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
-      return getPackages();
+    return getPackages();
   }
-  
+
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
     @Override
     protected String getJSBundleFile() {
-    return CodePush.getJSBundleFile();
+      return CodePush.getJSBundleFile();
     }
-    
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -116,25 +116,26 @@ public class MainApplication extends NavigationApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
-          new SplashScreenReactPackage(),
-          new VectorIconsPackage(),
-          new OrientationPackage(),
-          new BlurViewPackage(),
-          new RNFirebasePackage(),
-          new RNFirebaseAuthPackage(),
-          new RNFirebaseFirestorePackage(),
-          new RNFirebaseMessagingPackage(),
-          new RNFirebaseNotificationsPackage(),
-          new HighlighterViewPackage(),
-          new TextInputDelKeyHandlerPackage(),
-          new WheelPickerPackage(),
-          new FBSDKPackage(mCallbackManager),
-          new RNGoogleSigninPackage(),
-          new RNFirebaseAnalyticsPackage(),
-          new RNFirebaseCrashlyticsPackage()
+      return Arrays.<ReactPackage>(
+        new MainReactPackage(), 
+        new AsyncStoragePackage(),
+        new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
+        new SplashScreenReactPackage(), 
+        new VectorIconsPackage(), 
+        new OrientationPackage(), 
+        new BlurViewPackage(),
+        new RNFirebasePackage(), 
+        new RNFirebaseAuthPackage(), 
+        new RNFirebaseFirestorePackage(),
+        new RNFirebaseMessagingPackage(), 
+        new RNFirebaseNotificationsPackage(), 
+        new HighlighterViewPackage(),
+        new TextInputDelKeyHandlerPackage(), 
+        new WheelPickerPackage(), 
+        new FBSDKPackage(mCallbackManager),
+        new RNGoogleSigninPackage(), 
+        new RNFirebaseAnalyticsPackage(), 
+        new RNFirebaseCrashlyticsPackage()
       );
     }
 
@@ -147,6 +148,12 @@ public class MainApplication extends NavigationApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
+  }
+
+  @Override
+  protected void attachBaseContext(Context context) {
+    super.attachBaseContext(context);
+    MultiDex.install(this);
   }
 
   @Override
