@@ -16,6 +16,11 @@ interface ReplaceTask {
     }[];
 }
 
+const log = (...args: any[]) => {
+    // tslint:disable-next-line:no-console
+    console.log(...args);
+};
+
 export const updateConfig = (environment: string = 'default') => {
     const envFolder = `app_configuration/environments/${environment}`;
     const copyTasks: CopyTask[] = [
@@ -32,16 +37,12 @@ export const updateConfig = (environment: string = 'default') => {
             continue;
         }
         fs.copyFileSync(copyTask.src, copyTask.des);
-        // tslint:disable-next-line:no-console
-        console.log(`copied ${copyTask.src} to ${copyTask.des}`);
+        log(`copied ${copyTask.src} to ${copyTask.des}`);
     }
 
     // get google
-    // tslint:disable-next-line:max-line-length
     const googleServiceInfoContent = fs.readFileSync(`${envFolder}/ios/GoogleService-Info.plist`, { encoding: 'utf8' });
     const googleReverseClientId = googleServiceInfoContent.match(/com.googleusercontent.apps.[\w,-]*/);
-    // tslint:disable-next-line:no-console
-    console.log(googleReverseClientId ? googleReverseClientId[0] : '');
 
     const jobConfig = JSON.parse(fs.readFileSync(`${envFolder}/job_config.json`, { encoding: 'utf8' }));
     const replaceTasks: ReplaceTask[] = [
@@ -126,8 +127,7 @@ export const updateConfig = (environment: string = 'default') => {
         }
 
         fs.writeFileSync(replaceTask.src, newContent);
-        // tslint:disable-next-line:no-console
-        console.log(`updated ${replaceTask.src}`);
+        log(`updated ${replaceTask.src}`);
     }
 };
 
@@ -172,8 +172,7 @@ export const updateVersion = () => {
         }
 
         fs.writeFileSync(replaceTask.src, newContent);
-        // tslint:disable-next-line:no-console
-        console.log(`updated ${replaceTask.src}`);
+        log(`updated ${replaceTask.src}`);
     }
 };
 
