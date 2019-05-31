@@ -68,7 +68,7 @@
     "emulator": "${HOME}/Library/Android/sdk/tools/emulator -avd android-emulator",
     "ios": "react-native run-ios --simulator=\"iPhone X\"",
     "ios6": "react-native run-ios --simulator=\"iPhone 6\"",
-    "ios:beta": "bundle exec fastlane ios beta",
+    "ios:testflight": "bundle exec fastlane ios uploadToTestflight",
     "ios:build": "bundle exec fastlane ios build",
     "ios:codepush": "code-push release-react techkids/mobile-template-android",
     "ios:codepush:prod": "appcenter codepush promote -a techkids/mobile-template-ios -s Staging -d Production ",

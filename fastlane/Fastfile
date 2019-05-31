@@ -31,8 +31,7 @@ platform :android do
     build
     upload_to_play_store(
       track: 'alpha',
-      json_key: 'fastlane/googlePlaySecretKey.json',
-      package_name: ENV['ANDROID_PACKAGE_NAME']
+      json_key: 'fastlane/googlePlaySecretKey.json'
     )
   end
 
@@ -41,8 +40,7 @@ platform :android do
     upload_to_play_store(
       track: 'alpha',
       track_promote_to: "beta",
-      json_key: 'fastlane/googlePlaySecretKey.json',
-      package_name: ENV['ANDROID_PACKAGE_NAME']
+      json_key: 'fastlane/googlePlaySecretKey.json'
     )
   end
 
@@ -51,8 +49,7 @@ platform :android do
     upload_to_play_store(
       track: 'beta',
       track_promote_to: "production",
-      json_key: 'fastlane/googlePlaySecretKey.json',
-      package_name: ENV['ANDROID_PACKAGE_NAME']
+      json_key: 'fastlane/googlePlaySecretKey.json'
     )
   end
 end
@@ -64,9 +61,7 @@ platform :ios do
     match(
       readonly: true, 
       type: 'appstore',
-      storage_mode: 'git',
-      git_url: ENV["MATCH_GIT_URL"],
-      app_identifier: ENV['IOS_APP_IDENTIFIER']
+      storage_mode: 'git'
     )
   end
 
@@ -84,8 +79,7 @@ platform :ios do
   lane :uploadToTestflight do
     build
     pilot(
-      skip_waiting_for_build_processing: true,
-      username: ENV['APPSTORE_USERNAME']
+      skip_waiting_for_build_processing: true
     )
   end
 
@@ -95,9 +89,7 @@ platform :ios do
       submit_for_review: true,
       automatic_release: true,
       force: true, # Skip HTMl report verification,
-      skip_binary_upload: true,
-      username: ENV['APPSTORE_USERNAME'],
-      app_identifier: ENV['IOS_APP_IDENTIFIER']
+      skip_binary_upload: true
     )
   end
 end
