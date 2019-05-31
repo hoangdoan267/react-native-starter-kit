@@ -78,7 +78,7 @@
     "lint": "tsc -p . && tslint -p .",
     "start": "yarn lint && node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "updateIcon": "yo rn-toolbox:assets --icon ./assets/images/appIcon.png && cp -R ./assets/images/appIcon.png ./fastlane/metadata/android/en-US/images/icon.png"
+    "updateIcon": "yo rn-toolbox:assets --icon ./src/assets/images/appIcon.png"
   },
   "version": "0.1.0"
 }
