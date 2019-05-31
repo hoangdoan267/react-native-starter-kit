@@ -16,6 +16,8 @@
     appcenter codepush promote -a techkids/mobile-template-ios -s Staging -d Production => to Production Android
     appcenter codepush deployment history Staging -a techkids/mobile-template-ios => show history 
 ***8. fastlane (WIP)
+    LC_ALL=en_US.UTF-8
+    LANG=en_US.UTF-8
 9. react-i18next - internationalization (done)
 10. build release (android/ios) (done)
 11. formik + yup: form validation (done)

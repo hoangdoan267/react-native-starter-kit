@@ -40,6 +40,8 @@ import co.apptailor.googlesignin.RNGoogleSigninPackage;
 
 import java.util.Arrays;
 import java.util.List;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 public class MainApplication extends NavigationApplication {
 
@@ -116,7 +118,7 @@ public class MainApplication extends NavigationApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>(
+      return Arrays.<ReactPackage>asList(
         new MainReactPackage(), 
         new AsyncStoragePackage(),
         new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
