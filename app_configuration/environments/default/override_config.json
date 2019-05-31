@@ -1,0 +1,12 @@
+{
+    "codePush": {
+        "android": {
+            "productionKey": "",
+            "stagingKey": ""
+        },
+        "ios": {
+            "productionKey": "",
+            "stagingKey": ""
+        }
+    }
+}
