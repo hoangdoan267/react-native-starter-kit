@@ -11,7 +11,7 @@ interface Props {
     componentId: string;
 }
 
-export const EmailVerificationScreen = (props: Props) => {
+export const Screen = (props: Props) => {
     const { t } = useTranslation();
     const [isBusy, setIsBusy] = useState<boolean>(false);
     const [email, setEmail] = useState<string | null>('');

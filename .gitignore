@@ -63,7 +63,7 @@ buck-out/
 Pods
 
 # credentials
-app_configuration/environment/production
+app_configuration/environments/production
 android/*/*.keystore
 android/*/google-services.json
 fastlane/googlePlaySecretKey.json

@@ -1,6 +1,6 @@
-export * from './ForgotPasswordScreen/index';
-export * from './LoginScreen/index';
-export * from './RegisterScreen/index';
-export * from './AppLoaderScreen/index';
-export * from './EmailVerificationScreen/index';
-export * from './LoginWithPhoneNoScreen/index';
+export * from './ForgotPasswordScreen';
+export * from './LoginScreen';
+export * from './RegisterScreen';
+export * from './AppLoaderScreen';
+export * from './EmailVerificationScreen';
+export * from './LoginWithPhoneNoScreen';

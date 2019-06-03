@@ -24,7 +24,7 @@ interface Verification {
     timeToWait: number;
 }
 
-export const LoginWithPhoneNoScreen = ({ componentId }: Props) => {
+export const Screen = ({ componentId }: Props) => {
     const { t } = useTranslation();
 
     const [isBusy, setIsBusy] = useState<boolean>(false);

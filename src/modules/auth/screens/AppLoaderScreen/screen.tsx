@@ -7,7 +7,7 @@ import { auth } from 'react-native-firebase';
 import { navigationService } from '../../../../services';
 import SplashScreen from 'react-native-splash-screen';
 
-export const AppLoaderScreen = (props: ScreenProps) => {
+export const Screen = (props: ScreenProps) => {
     useEffect(
         () => {
             // check firebase to see if user is logged in or not

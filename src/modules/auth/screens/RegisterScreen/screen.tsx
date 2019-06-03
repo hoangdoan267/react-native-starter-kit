@@ -8,12 +8,8 @@ import firebase from 'react-native-firebase';
 import * as Yup from 'yup';
 import * as _ from 'lodash-es';
 import { Formik, FormikProps } from 'formik';
-import { catchAndLog } from '../../../../core';
+import { catchAndLog, ScreenProps } from '../../../../core';
 import { Navigation } from 'react-native-navigation';
-
-interface Props {
-    componentId: string;
-}
 
 interface FormData {
     email: string;
@@ -22,7 +18,7 @@ interface FormData {
     confirmPassword: string;
 }
 
-export const RegisterScreen = ({ componentId }: Props) => {
+export const Screen = ({ componentId }: ScreenProps) => {
     const { t } = useTranslation();
     const [isBusy, setIsBusy] = useState<boolean>(false);
 
