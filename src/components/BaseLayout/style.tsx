@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle, ImageStyle } from 'react-native';
+import { ComponentStyles } from '../../core';
 
-export const styles: { [id: string]: ViewStyle | TextStyle | ImageStyle } = {
+export const styles: ComponentStyles = {
 };
