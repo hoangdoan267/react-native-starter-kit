@@ -38,10 +38,10 @@ export const LoginScreen = ({ componentId }: Props) => {
                 setIsBusy={setIsBusy}
                 navigateTo={navigateTo} />
             <View marginT-20 center>
-                <Button text200 white background-orange30 label={t('login.login')} style={{ width: 300 }}
+                <Button text200 white  label={t('login.login')} style={{ width: 300 }}
                     onPress={() => submitForm()}
                     disabled={isBusy} />
-                <Button text200 white background-orange30 label={t('login.loginWithPhoneNo')} marginT-20 style={{ width: 300 }}
+                <Button text200 white  label={t('login.loginWithPhoneNo')} marginT-20 style={{ width: 300 }}
                     onPress={loginWithPhoneNo}
                     disabled={isBusy} />
                 <SocialLogin isBusy={isBusy} setIsBusy={setIsBusy} />

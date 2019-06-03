@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, TextField, View } from 'react-native-ui-lib';
+import { TextField, View } from 'react-native-ui-lib';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { catchAndLog, showNotification } from '../../../../../../core';
 import { screenNames } from '../../../../..';
 import firebase from 'react-native-firebase';
+import { ErrorText } from '../../../../../../components';
 
 interface Props {
   setFormSubmit: (submitForm: () => void) => void;
@@ -73,7 +74,7 @@ export const EmailLoginForm = ({ setFormSubmit, setIsBusy, navigateTo }: Props) 
             value={values.email}
           />
           {touched.email && errors.email &&
-            <Text red50 text90>{errors.email}</Text>
+            <ErrorText>{errors.email}</ErrorText>
           }
           <TextField text50 placeholder={t('login.password')} secureTextEntry dark10 floatingPlaceholder
             onChangeText={handleChange(fieldNames.password)}
@@ -81,7 +82,7 @@ export const EmailLoginForm = ({ setFormSubmit, setIsBusy, navigateTo }: Props) 
             value={values.password}
           />
           {(touched.password && errors.password) &&
-            <Text red50 text90>{errors.password}</Text>
+            <ErrorText>{errors.password}</ErrorText>
           }
         </View>
       );

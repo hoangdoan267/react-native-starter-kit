@@ -1,4 +1,4 @@
-import { createModel, ModelConfig } from '@rematch/core';
+import { createModel } from '@rematch/core';
 import { sleep } from '../../core';
 import produce from 'immer';
 
@@ -6,7 +6,7 @@ export interface DolphinsState {
     count: number;
 }
 
-export const dolphins: ModelConfig<DolphinsState> = createModel({
+export const dolphins = createModel<DolphinsState>({
     state: { count: 0 },
     reducers: {
         increment: produce((draftState: DolphinsState, payload: number) => {

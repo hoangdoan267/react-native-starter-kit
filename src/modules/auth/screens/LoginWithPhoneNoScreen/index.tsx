@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextField, Text, Button, Colors, Picker } from 'react-native-ui-lib';
+import { View, TextField, Text, Button, Picker } from 'react-native-ui-lib';
 import { catchAndLog, sleep, countryCodes } from '../../../../core';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout } from '../../../../components';
+import { BaseLayout, ErrorText } from '../../../../components';
 import { navigationService } from '../../../../services';
 import * as Yup from 'yup';
 import { FormikProps, Formik } from 'formik';
@@ -145,10 +145,10 @@ export const LoginWithPhoneNoScreen = ({ componentId }: Props) => {
                             keyboardType="number-pad"
                         />
                         {touched.phoneNo && errors.phoneNo &&
-                            <Text red50 text90>{errors.phoneNo}</Text>
+                            <ErrorText>{errors.phoneNo}</ErrorText>
                         }
                         <View center marginT-10>
-                            <Button text200 white background-orange30 style={{ width: 300 }}
+                            <Button text200 white style={{ width: 300 }}
                                 label={t('loginWithPhoneNo.sendOTP')
                                     + ((verification.codeSent && verification.timeToWait > 0) ? `(${verification.timeToWait})` : '')}
                                 onPress={sendOTP}
@@ -160,13 +160,13 @@ export const LoginWithPhoneNoScreen = ({ componentId }: Props) => {
                             value={values.otp}
                         />}
                         {(touched.otp && errors.otp) &&
-                            <Text red50 text90>{errors.otp}</Text>
+                            <ErrorText>{errors.otp}</ErrorText>
                         }
                         <View center marginT-10>
-                            <Button text200 white background-orange30 marginT-20 label={t('loginWithPhoneNo.verify')} style={{ width: 300 }}
+                            <Button text200 white marginT-20 label={t('loginWithPhoneNo.verify')} style={{ width: 300 }}
                                 onPress={handleSubmit}
                                 disabled={isBusy || !verification.codeSent} />
-                            <Button text200 outline outlineColor={Colors.orange30} marginT-20
+                            <Button text200 outline marginT-20
                                 label={t('loginWithPhoneNo.back')} style={{ width: 300 }}
                                 onPress={() => Navigation.pop(componentId)}
                                 disabled={isBusy} />

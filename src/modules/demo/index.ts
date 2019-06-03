@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import { Tab1Screen, Tab2ScreenContainer, Tab3ScreenContainer, HomeScreenContainer } from './screens';
+import { Tab2Screen, Tab3Screen, HomeScreen } from './screens';
 import { withLazyLoad, withStore } from '../../core';
 
 const screenNames = {
@@ -10,10 +10,9 @@ const screenNames = {
 };
 
 const registerScreens = () => {
-  Navigation.registerComponent(screenNames.HomeScreen, () => withLazyLoad(withStore(HomeScreenContainer)));
-  Navigation.registerComponent(screenNames.Tab1Screen, () => Tab1Screen);
-  Navigation.registerComponent(screenNames.Tab2Screen, () => withLazyLoad(withStore(Tab2ScreenContainer)));
-  Navigation.registerComponent(screenNames.Tab3Screen, () => withLazyLoad(withStore(Tab3ScreenContainer)));
+  Navigation.registerComponent(screenNames.HomeScreen, () => withLazyLoad(withStore(HomeScreen)));
+  Navigation.registerComponent(screenNames.Tab2Screen, () => withLazyLoad(withStore(Tab2Screen)));
+  Navigation.registerComponent(screenNames.Tab3Screen, () => withLazyLoad(withStore(Tab3Screen)));
 };
 
 export default {

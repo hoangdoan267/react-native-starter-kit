@@ -18,6 +18,14 @@
 ***8. fastlane (WIP)
     LC_ALL=en_US.UTF-8
     LANG=en_US.UTF-8
+    android:
+    SUPPLY_PACKAGE_NAME=you-android-app-id
+    ios:
+    MATCH_GIT_URL=your-match-git-url
+    MATCH_APP_IDENTIFIER=your-ios-app-id
+    MATCH_USERNAME=your-appstore-acc
+    FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=your-appstore-app-password
+    PILOT_USERNAME=your-appstore-acc
 9. react-i18next - internationalization (done)
 10. build release (android/ios) (done)
 11. formik + yup: form validation (done)

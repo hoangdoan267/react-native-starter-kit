@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
 import firebase from 'react-native-firebase';
-import { LoginType, catchAndLog, LOGIN_TYPE_FACEBOOK } from '../../../../../../core';
+import { LoginType, catchAndLog, LOGIN_TYPE_FACEBOOK, LOGIN_TYPE_GOOGLE } from '../../../../../../core';
 import { navigationService } from '../../../../../../services';
 
 interface Props {
@@ -59,10 +59,10 @@ export const SocialLogin = ({ isBusy, setIsBusy }: Props) => {
 
     return <View>
         <Button text200 white backgroundColor="#4267B2" marginT-20 label={t('login.continueWithFacebook')} style={{ width: 300 }}
-            onPress={() => login('facebook')}
+            onPress={() => login(LOGIN_TYPE_FACEBOOK)}
             disabled={isBusy} />
         <Button text400 white backgroundColor="#EA4334" marginT-20 label={t('login.continueWithGoogle')} style={{ width: 300 }}
-            onPress={() => login('google')}
+            onPress={() => login(LOGIN_TYPE_GOOGLE)}
             disabled={isBusy} />
     </View>;
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Colors } from 'react-native-ui-lib';
+import { View, Text, Button } from 'react-native-ui-lib';
 import { Navigation } from 'react-native-navigation';
 import { screenNames } from '../../..';
 import { useTranslation } from 'react-i18next';
@@ -71,14 +71,14 @@ export const EmailVerificationScreen = (props: Props) => {
         <View paddingH-25>
             <Text blue50 text70 center marginT-50>{t('emailVerification.notification', { email })}</Text>
             <View marginT-50 center>
-                <Button text200 white background-orange30 label={t('emailVerification.reload', { email })} style={{ width: 200 }}
+                <Button text200 white label={t('emailVerification.reload', { email })} style={{ width: 200 }}
                     onPress={reload}
                     disabled={isBusy} />
-                <Button text200 outline outlineColor={Colors.orange30} marginT-20
+                <Button text200 outline marginT-20
                     label={t('emailVerification.resendEmailVerification')} style={{ width: 200 }}
                     onPress={resendEmailVerification}
                     disabled={isBusy} />
-                <Button text200 outline outlineColor={Colors.orange30} marginT-20 label={t('emailVerification.logout')} style={{ width: 200 }}
+                <Button text200 outline marginT-20 label={t('emailVerification.logout')} style={{ width: 200 }}
                     onPress={logout}
                     disabled={isBusy} />
             </View>

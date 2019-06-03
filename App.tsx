@@ -30,7 +30,7 @@ export default class App extends Component<Props> {
         <TextInput text50 placeholder="username" dark10 floatingPlaceholder />
         <TextInput text50 placeholder="password" secureTextEntry dark10 floatingPlaceholder />
         <View marginT-100 center>
-          <Button text70 white background-orange30 label="Login" />
+          <Button text70 white label="Login" />
           <Button link text70 orange30 label="Sign Up" marginT-20 />
         </View>
       </View>

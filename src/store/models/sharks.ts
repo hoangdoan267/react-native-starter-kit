@@ -1,4 +1,4 @@
-import { createModel, ModelConfig } from '@rematch/core';
+import { createModel } from '@rematch/core';
 import { sleep } from '../../core';
 import produce from 'immer';
 
@@ -6,7 +6,7 @@ export interface SharksState {
     count: number;
 }
 
-export const sharks: ModelConfig<SharksState> = createModel({
+export const sharks = createModel<SharksState>({
     state: { count: 0 },
     reducers: {
         increment: produce((draftState: SharksState, payload: number) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native-ui-lib';
 import { useTranslation } from 'react-i18next';
 import { recordError } from '../../core';
+import { ErrorText } from '..';
 
 interface State {
     hasError: boolean;
@@ -9,7 +9,7 @@ interface State {
 
 const ErrorMessage = () => {
     const { t } = useTranslation();
-    return <Text red50 text50>{t('error.somethingWentWrong')}</Text>;
+    return <ErrorText>{t('error.somethingWentWrong')}</ErrorText>;
 };
 
 export class ErrorBoundary extends Component<{}, State> {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, TextField, Text, Button, Colors } from 'react-native-ui-lib';
+import { View, TextField, Text, Button } from 'react-native-ui-lib';
 import { screenNames } from '../../..';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout } from '../../../../components';
+import { BaseLayout, ErrorText } from '../../../../components';
 import { navigationService } from '../../../../services';
 import firebase from 'react-native-firebase';
 import * as Yup from 'yup';
@@ -117,10 +117,10 @@ export const RegisterScreen = ({ componentId }: Props) => {
                             value={values.email}
                         />
                         {touched.email && errors.email &&
-                            <Text red50 text90>{errors.email}</Text>
+                            <ErrorText>{errors.email}</ErrorText>
                         }
                         {!(touched.email && errors.email) && errors.isEmailRegistered &&
-                            <Text red50 text90>{errors.isEmailRegistered}</Text>
+                            <ErrorText>{errors.isEmailRegistered}</ErrorText>
                         }
                         <TextField text50 placeholder={t('register.password')} secureTextEntry dark10 floatingPlaceholder
                             onChangeText={handleChange(fieldNames.password)}
@@ -128,7 +128,7 @@ export const RegisterScreen = ({ componentId }: Props) => {
                             value={values.password}
                         />
                         {touched.password && errors.password &&
-                            <Text red50 text90>{errors.password}</Text>
+                            <ErrorText>{errors.password}</ErrorText>
                         }
                         <TextField text50 placeholder={t('register.confirmPassword')} secureTextEntry dark10 floatingPlaceholder
                             onChangeText={handleChange(fieldNames.confirmPassword)}
@@ -136,13 +136,13 @@ export const RegisterScreen = ({ componentId }: Props) => {
                             value={values.confirmPassword}
                         />
                         {touched.confirmPassword && errors.confirmPassword &&
-                            <Text red50 text90>{errors.confirmPassword}</Text>
+                            <ErrorText>{errors.confirmPassword}</ErrorText>
                         }
                         <View marginT-50 center>
-                            <Button text200 white background-orange30 label={t('register.register')} style={{ width: 200 }}
+                            <Button text200 white label={t('register.register')} style={{ width: 200 }}
                                 onPress={handleSubmit}
                                 disabled={isBusy} />
-                            <Button text200 outline outlineColor={Colors.orange30} marginT-20 label={t('register.back')} style={{ width: 200 }}
+                            <Button text200 outline marginT-20 label={t('register.back')} style={{ width: 200 }}
                                 onPress={() => Navigation.pop(componentId)}
                                 disabled={isBusy} />
                         </View>
