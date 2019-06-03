@@ -20,8 +20,8 @@
     "vn": "vn"
   },
   "ios": {
-    "build": 2,
-    "version": "0.1.1"
+    "build": 3,
+    "version": "0.1.2"
   },
   "signInOptions": [
     "email",
