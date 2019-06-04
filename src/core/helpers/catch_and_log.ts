@@ -1,4 +1,4 @@
-import { recordError } from '..';
+import { recordError } from './record_error';
 export const catchAndLog = (action: (...actionArgs: any[]) => Promise<void>, finallyAction: (() => Promise<void>) | undefined = undefined) => {
     return async (...args: any[]) => {
         try {

@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import { View } from 'react-native-ui-lib';
 import Orientation from 'react-native-orientation-locker';
-import { ErrorBoundary } from '..';
+import { ErrorBoundary } from '../ErrorBoundary';
 
 interface Props {
     children?: ReactNode;

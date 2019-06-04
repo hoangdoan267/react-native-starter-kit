@@ -1,5 +1,6 @@
 import { ThemeManager, Typography } from 'react-native-ui-lib';
-import { ComponentStyles, colors } from '..';
+import { ComponentStyles } from '..';
+import { colors } from './colors';
 
 export const setDefaultTheme = () => {
 

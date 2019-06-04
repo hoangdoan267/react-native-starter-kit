@@ -2,7 +2,8 @@ import firebase from 'react-native-firebase';
 import codePush from 'react-native-code-push';
 import { Platform } from 'react-native';
 import { config } from '../../config';
-import { showNotification, catchAndLog } from '..';
+import { catchAndLog } from '../helpers/catch_and_log';
+import { showNotification } from '../helpers/show_notification';
 
 let isTester = false;
 const TESTERS_COLLECTION = 'testers';
@@ -59,6 +60,9 @@ const checkIsTester = async () => {
 };
 
 export const checkUpdate = catchAndLog(async () => {
+    if (__DEV__) {
+        return;
+    }
     const useStagingKey = await checkIsTester();
     isTester = useStagingKey;
     const deploymentKey = Platform.OS === 'android'
