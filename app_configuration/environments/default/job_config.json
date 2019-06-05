@@ -1,0 +1,13 @@
+{
+    "fb": {
+        "id": "yourfbid"
+    },
+    "android": {
+        "applicationId": "com.reactnative.yourappid",
+        "appName": "Your app name"
+    },
+    "ios": {
+        "bundleId": "com.reactnative.yourappid",
+        "appName": "Your app name"
+    }
+}

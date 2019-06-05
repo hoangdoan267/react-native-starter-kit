@@ -1,0 +1,69 @@
+{
+    "common": {
+        "email": "Email",
+        "error": "Error",
+        "ok": "OK",
+        "phoneNo": "Phone No",
+        "result": "Result",
+        "tab1": "Tab 1",
+        "tab2": "Tab 2",
+        "tab3": "Tab 3",
+        "warning": "Warning"
+    },
+    "emailVerification": {
+        "emailNotVerified": "Your email is not verified. Please try again",
+        "emailVerificationSent": "Please check your email, verify your account then reload",
+        "logout": "Logout",
+        "notification": "Your email {{email}} is not verified. Please check your email, verify your account then reload",
+        "reload": "Reload",
+        "resendEmailVerification": "Resend verification"
+    },
+    "error": {
+        "confirmPasswordDoesNotMatched": "Confirm password does not matched",
+        "emailHasBeenAlreadyRegistered": "Email has been already registered",
+        "emailIsNotRegistered": "Email is not registered yet",
+        "invalid": "Invalid",
+        "passwordIncorrect": "The password is invalid",
+        "passwordIsInvalid": "Password must be at least 6 characters, no more than 20 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit",
+        "required": "Required",
+        "somethingWentWrong": "Something went wrong"
+    },
+    "home": {
+        "hello": "Hello",
+        "logout": "Logout"
+    },
+    "login": {
+        "continueWithFacebook": "Continue with Facebook",
+        "continueWithGoogle": "Continue with Google",
+        "email": "Email",
+        "forgotPassword": "Forgot Password",
+        "login": "Login",
+        "loginWithPhoneNo": "Login with Phone No",
+        "password": "Password",
+        "phoneNo": "Phone No",
+        "register": "Register",
+        "sendOTP": "Send OTP",
+        "version": "Version",
+        "welcome": "Welcome"
+    },
+    "loginWithPhoneNo": {
+        "back": "Back",
+        "country": "Country",
+        "otp": "OTP",
+        "phoneNo": "Phone No",
+        "sendOTP": "Send OTP",
+        "verify": "Verify",
+        "welcome": "Welcome"
+    },
+    "register": {
+        "back": "Back",
+        "confirmPassword": "Confirm password",
+        "email": "Email",
+        "getOTP": "Get OTP",
+        "otp": "OTP",
+        "password": "Password",
+        "phoneNo": "Phone No",
+        "register": "Register",
+        "registeredSuccessfully": "Registered successfully. Please check your email to verify your account"
+    }
+}

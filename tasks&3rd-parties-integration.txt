@@ -1,0 +1,48 @@
+1. firebase (auth/firestore/messaging/crashlytics/performance - done)
+2. react-native-navigation: native navigation (done)
+3. login register (done)
+4. react-native-ui-lib: UI components with tabs (done)
+    https://github.com/react-native-community/react-native-blur
+***5. test
+6. ProGuard (done)
+7. codepush (done) staging vs production
+    https://docs.microsoft.com/en-us/appcenter/distribution/codepush/cli
+    appcenter codepush deployment list -a techkids/mobile-template-android -k
+    appcenter codepush release-react -a techkids/mobile-template-android --description 'Update to ver v0.1.2' => to Staging Android
+    appcenter codepush promote -a techkids/mobile-template-android -s Staging -d Production => to Production Android
+    appcenter codepush deployment history Staging -a techkids/mobile-template-android => show history 
+    appcenter codepush deployment list -a techkids/mobile-template-ios -k
+    appcenter codepush release-react -a techkids/mobile-template-ios --description 'Update to ver v0.1.1' => to Staging iOS
+    appcenter codepush promote -a techkids/mobile-template-ios -s Staging -d Production => to Production Android
+    appcenter codepush deployment history Staging -a techkids/mobile-template-ios => show history 
+8. fastlane (done)
+    LC_ALL=en_US.UTF-8
+    LANG=en_US.UTF-8
+    android:
+    SUPPLY_PACKAGE_NAME=you-android-app-id
+    ios:
+    MATCH_GIT_URL=your-match-git-url
+    MATCH_APP_IDENTIFIER=your-ios-app-id
+    MATCH_USERNAME=your-appstore-acc
+    FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=your-appstore-app-password
+    PILOT_USERNAME=your-appstore-acc
+9. react-i18next - internationalization (done)
+10. build release (android/ios) (done)
+11. formik + yup: form validation (done)
+    https://gist.github.com/jaredpalmer/a8faaab12bc37e6a160a3c9549664f0b => async validation
+12. react-native-fbsdk: login facebook (done)
+13. react-native-google-signin: login google (done)
+    keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android => debug SHA1 android
+    keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64 => debug android
+    keytool -exportcert -alias techkids-mobile -keystore android/app/techkids-mobile.keystore | openssl sha1 -binary | openssl base64
+14. logging (done) (checking render error as well - done)
+15. react-native-root-toast (done)
+16. rematch (done)
+17. react-native-orientation-locker (fork from react-native-orientation) (done)
+    https://github.com/yamill/react-native-orientation/issues/136#issuecomment-358419659
+18. react-native-vector-icons (done)
+    only add MaterialCommunityIcons
+19. react-native-splash-screen (done)
+20: immer for state mutation (done)
+***21: check latest version (pending)
+    https://github.com/kimxogus/react-native-version-check

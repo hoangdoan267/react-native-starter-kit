@@ -1,0 +1,72 @@
+{
+    "translation": {
+        "common": {
+            "email": "Email",
+            "error": "Lỗi",
+            "ok": "OK",
+            "phoneNo": "Số ĐT",
+            "result": "Kết quả",
+            "tab1": "TabV 1",
+            "tab2": "TabV 2",
+            "tab3": "TabV 3",
+            "warning": "Cảnh báo"
+        },
+        "emailVerification": {
+            "emailNotVerified": "Email của bạn chưa được xác thực. Vui lòng kiểm tra lại",
+            "emailVerificationSent": "Vui lòng kiểm tra lại hòm mail và xác thực tài khoản",
+            "logout": "Đăng xuất",
+            "notification": "Email của bạn {{email}} chưa được xác thực, vui lòng kiểm tra lại hòm mail và xác thực tài khoản",
+            "reload": "Kiểm tra lại",
+            "resendEmailVerification": "Gửi lại xác nhận"
+        },
+        "error": {
+            "emailAlreadyRegistered": "Email đã được đăng kí",
+            "emailIsNotRegistered": "Email chưa được đăng kí",
+            "invalid": "Không hợp lệ",
+            "invalidPassword": "Mật khẩu dài từ 6 đến 20 kí tự, bao gồm ít nhất 1 chữ hoa, 1 chữ thường và 1 chữ số",
+            "passwordIncorrect": "Mật khẩu không đúng",
+            "required": "Bắt buộc",
+            "somethingWentWrong": "Có lỗi xảy ra"
+        },
+        "home": {
+            "hello": "Xin chào",
+            "logout": "Đăng xuất"
+        },
+        "login": {
+            "continueWithFacebook": "Tiếp tục với Facebook",
+            "continueWithGoogle": "Tiếp tục với Google",
+            "country": "Quốc gia",
+            "email": "Email",
+            "forgotPassword": "Quên mật khẩu",
+            "login": "Đăng nhập",
+            "loginWithPhoneNo": "Đăng nhập bằng số điện thoại",
+            "otp": "OTP",
+            "password": "Mật khẩu",
+            "phoneNo": "Số ĐT",
+            "register": "Đăng ký",
+            "sendOTP": "Gửi OTP",
+            "version": "Version",
+            "welcome": "Xin chào"
+        },
+        "loginWithPhoneNo": {
+            "back": "Quay lại",
+            "otp": "OTP",
+            "phoneNo": "Số điện thoại",
+            "sendOTP": "Gửi OTP",
+            "verify": "Xác thực",
+            "welcome": "Xin chào"
+        },
+        "register": {
+            "back": "Quay lại",
+            "confirmPassword": "Xác nhận mật khẩu",
+            "email": "Email",
+            "getOTP": "Nhận OTP",
+            "loginWithPhoneNo": "Đăng nhập với số điện thoại",
+            "otp": "OTP",
+            "password": "Mật khẩu",
+            "phoneNo": "Số ĐT",
+            "register": "Đăng ký",
+            "registeredSuccessfully": "Đăng kí thành công. Kiểm tra email để xác nhận tài khoản"
+        }
+    }
+}

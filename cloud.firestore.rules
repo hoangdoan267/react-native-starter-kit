@@ -1,0 +1,10 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /latestVersion/{latestVersion} {
+      allow read;
+    }
+    match /testers/{testerId} {
+      allow read: if request.auth != null && request.auth.uid == testerId;
+    }
+  }
+}

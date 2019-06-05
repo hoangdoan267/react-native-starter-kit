@@ -1,0 +1,32 @@
+{
+  "android": {
+    "version": "0.1.2",
+    "versionCode": 3
+  },
+  "appName": "mobile",
+  "codePush": {
+    "android": {
+      "productionKey": "",
+      "stagingKey": ""
+    },
+    "ios": {
+      "productionKey": "",
+      "stagingKey": ""
+    }
+  },
+  "i18n": {
+    "defaultLang": "en",
+    "en": "en",
+    "vn": "vn"
+  },
+  "ios": {
+    "build": 3,
+    "version": "0.1.2"
+  },
+  "signInOptions": [
+    "email",
+    "phone",
+    "facebook",
+    "google"
+  ]
+}
