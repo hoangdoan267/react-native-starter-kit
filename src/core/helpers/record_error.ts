@@ -8,6 +8,9 @@ export const recordError = (error: Error) => {
             // tslint:disable-next-line:no-console
             console.log(error.stack);
         } else {
+            if (firebase.auth().currentUser) {
+                firebase.crashlytics().setStringValue('userId', `${firebase.auth().currentUser!.uid}`);
+            }
             firebase.crashlytics().setStringValue('stack', `${error.stack}`);
             firebase.crashlytics().setStringValue('message', `${error.message}`);
             firebase.crashlytics().recordError(0, `RN Fatal: ${error.message}`);
