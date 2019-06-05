@@ -17,6 +17,7 @@ import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage;
+import io.invertase.firebase.perf.RNFirebasePerformancePackage;
 
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
@@ -95,7 +96,8 @@ public class MainApplication extends NavigationApplication {
       new FBSDKPackage(mCallbackManager),
       new RNGoogleSigninPackage(), 
       new RNFirebaseAnalyticsPackage(), 
-      new RNFirebaseCrashlyticsPackage()
+      new RNFirebaseCrashlyticsPackage(),
+      new RNFirebasePerformancePackage()
     );
   }
 
@@ -137,7 +139,8 @@ public class MainApplication extends NavigationApplication {
         new FBSDKPackage(mCallbackManager),
         new RNGoogleSigninPackage(), 
         new RNFirebaseAnalyticsPackage(), 
-        new RNFirebaseCrashlyticsPackage()
+        new RNFirebaseCrashlyticsPackage(),
+        new RNFirebasePerformancePackage()
       );
     }
 
