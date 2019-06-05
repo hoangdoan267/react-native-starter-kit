@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button } from 'react-native-ui-lib';
 import { Navigation } from 'react-native-navigation';
-import { screenNames } from '../../..';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout } from '../../../../components';
-import { catchAndLog, showNotification } from '../../../../core';
 import firebase from 'react-native-firebase';
+import { BaseLayout } from '@app/components';
+import { catchAndLog, showNotification } from '@app/core';
+import { screenNames } from '@app/modules';
 
 interface Props {
     componentId: string;

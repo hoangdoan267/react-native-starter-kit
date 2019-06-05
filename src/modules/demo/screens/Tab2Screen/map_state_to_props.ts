@@ -1,4 +1,4 @@
-import { iRootState } from '../../../../store';
+import { iRootState } from '@app/store';
 
 export const mapStateToProps = (state: iRootState) => ({
     sharks: state.sharks,

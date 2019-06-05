@@ -1,5 +1,5 @@
 import { createModel } from '@rematch/core';
-import { sleep } from '../../core';
+import { sleep } from '@app/core';
 import produce from 'immer';
 
 export interface SharksState {

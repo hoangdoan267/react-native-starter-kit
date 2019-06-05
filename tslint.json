@@ -1,18 +1,18 @@
 {
     "defaultSeverity": "error",
-    "no-reference": false,
     "extends": [
         "tslint:latest"
     ],
+    "jsRules": {
+        "no-unused-expression": true
+    },
     "linterOptions": {
         "exclude": [
             "index.js",
             "node_modules"
         ]
     },
-    "jsRules": {
-        "no-unused-expression": true
-    },
+    "no-reference": false,
     "rules": {
         "align": [
             true,
@@ -22,7 +22,6 @@
         ],
         "array-type": [
             false
-
         ],
         "arrow-parens": false,
         "ban": false,
@@ -79,6 +78,12 @@
         "no-empty": true,
         "no-empty-interface": false,
         "no-eval": true,
+        "no-implicit-dependencies": [
+            true,
+            [
+                "@app"
+            ]
+        ],
         "no-internal-module": true,
         "no-parameter-properties": false,
         "no-parameter-reassignment": true,

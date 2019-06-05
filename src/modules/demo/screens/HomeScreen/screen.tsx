@@ -1,15 +1,15 @@
 import React from 'react';
 import { mapStateToProps } from './map_state_to_props';
 import { mapDispatchToProps } from './map_dispatch_to_props';
-import { ScreenProps, catchAndLog } from '../../../../core';
+import { ScreenProps, catchAndLog } from '@app/core';
 import { Text, View, Button } from 'react-native-ui-lib';
-import { BaseLayout, Icon } from '../../../../components';
+import { BaseLayout, Icon } from '@app/components';
 import { auth } from 'react-native-firebase';
 import { useTranslation } from 'react-i18next';
 import { GoogleSignin } from 'react-native-google-signin';
-import { navigationService } from '../../../../services';
+import { navigationService } from '@app/services';
 import { Navigation } from 'react-native-navigation';
-import { config } from '../../../../config';
+import { config } from '@app/config';
 
 type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps> & ScreenProps;
 

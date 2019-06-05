@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
 import firebase from 'react-native-firebase';
-import { LoginType, catchAndLog, LOGIN_TYPE_FACEBOOK, LOGIN_TYPE_GOOGLE } from '../../../../../../core';
-import { navigationService } from '../../../../../../services';
+import { LoginType, catchAndLog, LOGIN_TYPE_FACEBOOK, LOGIN_TYPE_GOOGLE } from '@app/core';
+import { navigationService } from '@app/services';
 
 interface Props {
     isBusy: boolean;

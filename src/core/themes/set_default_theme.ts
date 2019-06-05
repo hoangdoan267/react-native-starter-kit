@@ -18,6 +18,7 @@ export const setDefaultTheme = () => {
             fontSize: 14,
             color: colors.white,
             backgroundColor: colors.primary,
+            borderColor: colors.primary,
         }
     };
 
@@ -35,7 +36,7 @@ export const setDefaultTheme = () => {
                 ? props.outlineColor
                     ? props.outlineColor
                     : colors.primary
-                : colors.white
+                : colors.white,
         };
     });
 };

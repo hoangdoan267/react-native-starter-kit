@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react",
@@ -13,6 +14,11 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "paths": {
+      "@app/*": [
+        "src/*"
+      ]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,

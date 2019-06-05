@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, TextField, Text, Button } from 'react-native-ui-lib';
-import { screenNames } from '../../..';
+import { screenNames } from '@app/modules';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout, ErrorText } from '../../../../components';
-import { navigationService } from '../../../../services';
+import { BaseLayout, ErrorText } from '@app/components';
+import { navigationService } from '@app/services';
 import firebase from 'react-native-firebase';
 import * as Yup from 'yup';
 import * as _ from 'lodash-es';
 import { Formik, FormikProps } from 'formik';
-import { catchAndLog, ScreenProps } from '../../../../core';
+import { catchAndLog, ScreenProps } from '@app/core';
 import { Navigation } from 'react-native-navigation';
 
 interface FormData {

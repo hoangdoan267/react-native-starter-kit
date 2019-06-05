@@ -1,4 +1,4 @@
-import { ComponentStyles } from '../../../../core';
+import { ComponentStyles } from '@app/core';
 
 export const styles: ComponentStyles = {
 };

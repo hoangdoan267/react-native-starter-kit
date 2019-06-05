@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
 import { Tab2Screen, Tab3Screen, HomeScreen } from './screens';
-import { withLazyLoad, withStore } from '../../core';
+import { withLazyLoad, withStore } from '@app/core';
 
 const screenNames = {
   HomeScreen: 'HomeScreen',

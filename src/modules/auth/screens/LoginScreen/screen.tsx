@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native-ui-lib';
 import { EmailLoginForm, SocialLogin, LanguageSelection } from './components';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout } from '../../../../components';
-import { screenNames } from '../../..';
-import { navigationService } from '../../../../services';
-import { config } from '../../../../config';
+import { BaseLayout } from '@app/components';
+import { screenNames } from '@app/modules';
+import { navigationService } from '@app/services';
+import { config } from '@app/config';
 
 interface Props {
     componentId: string;
@@ -20,8 +20,9 @@ export const Screen = ({ componentId }: Props) => {
 
     const [isBusy, setIsBusy] = useState<boolean>(false);
 
-    // tslint:disable-next-line:no-empty
-    let submitForm = () => { };
+    let submitForm = () => {
+        // blank
+    };
     const setFormSubmit = (submitFormInput: () => void) => {
         submitForm = submitFormInput;
     };

@@ -1,14 +1,16 @@
 
+// tslint:disable:max-line-length
+// tslint:disable:no-console
 import fs from 'fs';
 import path from 'path';
 import { config } from './src/config';
 
-interface CopyTask {
+interface CopyFileTask {
     src: string;
     des: string;
 }
 
-interface ReplaceTask {
+interface ReplaceStringTask {
     src: string;
     replaces: {
         old: RegExp | string;
@@ -17,13 +19,12 @@ interface ReplaceTask {
 }
 
 const log = (...args: any[]) => {
-    // tslint:disable-next-line:no-console
     console.log(...args);
 };
 
 export const updateConfig = (environment: string = 'default') => {
     const envFolder = `app_configuration/environments/${environment}`;
-    const copyTasks: CopyTask[] = [
+    const copyTasks: CopyFileTask[] = [
         { src: `${envFolder}/android/app.keystore`, des: `android/app/app.keystore` },
         { src: `${envFolder}/android/google-services.json`, des: `android/app/google-services.json` },
         { src: `${envFolder}/android/gradle.properties`, des: `android/gradle.properties` },
@@ -45,7 +46,7 @@ export const updateConfig = (environment: string = 'default') => {
     const googleReverseClientId = googleServiceInfoContent.match(/com.googleusercontent.apps.[\w,-]*/);
 
     const jobConfig = JSON.parse(fs.readFileSync(`${envFolder}/job_config.json`, { encoding: 'utf8' }));
-    const replaceTasks: ReplaceTask[] = [
+    const replaceTasks: ReplaceStringTask[] = [
         {
             src: path.resolve(__dirname, `./android/app/build.gradle`),
             replaces: [
@@ -84,15 +85,11 @@ export const updateConfig = (environment: string = 'default') => {
                     new: `<key>CFBundleDisplayName<\/key>\n	<string>${jobConfig.ios.appName}</string>`,
                 },
                 {
-                    // tslint:disable-next-line:max-line-length
                     old: /<string>fburl<\/string>[\n,	, ]*<key>CFBundleURLSchemes<\/key>[\n,	, ]*<array>[\n,	, ]*<string>\w+<\/string>[\n,	, ]*<\/array>/,
-                    // tslint:disable-next-line:max-line-length
                     new: `<string>fburl</string>\n			<key>CFBundleURLSchemes<\/key>\n			<array>\n				<string>fb${jobConfig.fb.id}</string>\n			<\/array>`,
                 },
                 {
-                    // tslint:disable-next-line:max-line-length
                     old: /<string>googleurl<\/string>[\n,	, ]*<key>CFBundleURLSchemes<\/key>[\n,	, ]*<array>[\n,	, ]*<string>[\w,.,-]*<\/string>[\n,	, ]*<\/array>/,
-                    // tslint:disable-next-line:max-line-length
                     new: `<string>googleurl</string>\n			<key>CFBundleURLSchemes<\/key>\n			<array>\n				<string>${(googleReverseClientId ? googleReverseClientId[0] : '')}</string>\n			<\/array>`,
                 },
                 {
@@ -132,7 +129,7 @@ export const updateConfig = (environment: string = 'default') => {
 };
 
 export const updateVersion = () => {
-    const replaceTasks: ReplaceTask[] = [
+    const replaceTasks: ReplaceStringTask[] = [
         {
             src: path.resolve(__dirname, `./android/app/build.gradle`),
             replaces: [

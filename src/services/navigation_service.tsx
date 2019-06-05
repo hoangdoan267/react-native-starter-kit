@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
-import { screenNames } from '../modules';
-import { icons } from '../core';
+import { screenNames } from '@app/modules';
+import { icons } from '@app/core';
 import { getI18n } from 'react-i18next';
 
 const navigateTo = ({ screenName, componentId }: { screenName: string, componentId: string }) => {

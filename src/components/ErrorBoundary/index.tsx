@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useTranslation } from 'react-i18next';
-import { recordError } from '../../core';
-import { ErrorText } from '../ErrorText';
+import { recordError } from '@app/core';
+import { ErrorText } from '@app/components';
 
 interface State {
     hasError: boolean;

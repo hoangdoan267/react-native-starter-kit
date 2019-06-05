@@ -1,4 +1,4 @@
-import { Dispatch } from '../../../../store';
+import { Dispatch } from '@app/store';
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
     incrementSharks: () => dispatch.sharks.increment(1),

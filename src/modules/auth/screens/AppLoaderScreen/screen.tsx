@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native-ui-lib';
 import { Navigation } from 'react-native-navigation';
-import { screenNames } from '../../..';
-import { ScreenProps } from '../../../../core';
+import { screenNames } from '@app/modules';
+import { ScreenProps } from '@app/core';
 import { auth } from 'react-native-firebase';
-import { navigationService } from '../../../../services';
+import { navigationService } from '@app/services';
 import SplashScreen from 'react-native-splash-screen';
 
 export const Screen = (props: ScreenProps) => {

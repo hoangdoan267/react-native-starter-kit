@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, TextField, Text, Button, Picker } from 'react-native-ui-lib';
-import { catchAndLog, sleep, countryCodes } from '../../../../core';
+import { catchAndLog, sleep, countryCodes } from '@app/core';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout, ErrorText } from '../../../../components';
-import { navigationService } from '../../../../services';
+import { BaseLayout, ErrorText } from '@app/components';
+import { navigationService } from '@app/services';
 import * as Yup from 'yup';
 import { FormikProps, Formik } from 'formik';
 import firebase from 'react-native-firebase';

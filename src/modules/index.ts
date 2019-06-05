@@ -1,4 +1,3 @@
-// import { navigationService } from './../services/navigationService';
 import auth from './auth';
 import demo from './demo';
 import { Navigation } from 'react-native-navigation';

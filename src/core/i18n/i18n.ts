@@ -13,10 +13,12 @@ export const initializeI18Next = async () => {
         type: 'languageDetector',
         async: true,
         detect: (cb: any) => cb('en'),
-        // tslint:disable-next-line:no-empty
-        init: () => { },
-        // tslint:disable-next-line:no-empty
-        cacheUserLanguage: () => { },
+        init: () => {
+            // blank
+        },
+        cacheUserLanguage: () => {
+            // blank
+        },
     };
 
     await i18next

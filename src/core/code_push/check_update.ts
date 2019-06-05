@@ -1,9 +1,8 @@
 import firebase from 'react-native-firebase';
 import codePush from 'react-native-code-push';
 import { Platform } from 'react-native';
-import { config } from '../../config';
-import { catchAndLog } from '../helpers/catch_and_log';
-import { showNotification } from '../helpers/show_notification';
+import { config } from '@app/config';
+import { catchAndLog, showNotification } from '@app/core';
 
 let isTester = false;
 const TESTERS_COLLECTION = 'testers';
