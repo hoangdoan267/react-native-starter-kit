@@ -6,7 +6,7 @@ import { BaseLayout, ErrorText } from '@app/components';
 import { navigationService } from '@app/services';
 import * as Yup from 'yup';
 import { FormikProps, Formik } from 'formik';
-import firebase from 'react-native-firebase';
+import firebase, { RNFirebase } from 'react-native-firebase';
 import { Navigation } from 'react-native-navigation';
 
 interface Props {
@@ -30,7 +30,7 @@ export const Screen = ({ componentId }: Props) => {
     const [isBusy, setIsBusy] = useState<boolean>(false);
 
     const [verification, setVerification] = useState<Verification>({ codeSent: false, timeToWait: 0 });
-    const [confirmResult, setConfirmationResult] = useState<any>(undefined);
+    const [confirmResult, setConfirmationResult] = useState<RNFirebase.ConfirmationResult | undefined>(undefined);
 
     const initialValues = {
         countryCode: '+84',
@@ -63,7 +63,7 @@ export const Screen = ({ componentId }: Props) => {
         formikProps.setFieldValue(fieldNames.countryCode, newCountry.value);
     };
 
-    let countDownInterval: any;
+    let countDownInterval: NodeJS.Timer | undefined;
     useEffect(
         () => {
             return () => {
@@ -86,7 +86,7 @@ export const Screen = ({ componentId }: Props) => {
             countDownInterval = setInterval(
                 () => {
                     setVerification(prevState => {
-                        if (prevState.timeToWait <= 1) {
+                        if (prevState.timeToWait <= 1 && countDownInterval) {
                             clearInterval(countDownInterval);
                             countDownInterval = undefined;
                         }
@@ -108,7 +108,9 @@ export const Screen = ({ componentId }: Props) => {
                 return;
             }
             setIsBusy(true);
-            await confirmResult.confirm(values.otp);
+            if (confirmResult) {
+                await confirmResult.confirm(values.otp);
+            }
             await firebase.auth().currentUser!.updateProfile({ displayName: `user${values.phoneNo}` });
             firebase.analytics().logEvent('LOGIN_PHONE');
             navigationService.navigateToHome();

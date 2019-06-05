@@ -7,7 +7,7 @@ import { catchAndLog, showNotification } from '@app/core';
 let isTester = false;
 const TESTERS_COLLECTION = 'testers';
 
-const onSyncStatusChange = (syncStatus: any) => {
+const onSyncStatusChange = (syncStatus: codePush.SyncStatus) => {
     let status = '';
     switch (syncStatus) {
         case codePush.SyncStatus.AWAITING_USER_ACTION:
