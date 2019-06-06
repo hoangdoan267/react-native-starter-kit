@@ -64,6 +64,7 @@ Pods
 
 # credentials
 app_configuration/environments/production
+production.zip
 android/*/*.keystore
 android/*/google-services.json
 fastlane/googlePlaySecretKey.json
