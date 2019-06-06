@@ -1,9 +1,3 @@
-language: node_js
-node_js: 8.5.0
-before_install:
-  - openssl aes-256-cbc -K $encrypted_e47b4d652ad1_key -iv $encrypted_e47b4d652ad1_iv -in production.zip.enc -out production.zip -d
-  - unzip production.zip
-install: yarn
 jobs:
   include:
   # - stage: Build
@@ -27,10 +21,12 @@ jobs:
       - nvm install 8.5.0
       - gem install bundler
       - bundle install
+      - openssl aes-256-cbc -K $encrypted_e47b4d652ad1_key -iv $encrypted_e47b4d652ad1_iv -in production.zip.enc -out production.zip -d
+      - unzip production.zip
     env: 
       - SUPPLY_PACKAGE_NAME="com.reactnative.starterkit"
+    install: yarn
     script: 
-      unzip -o production.zip &&
       yarn job production &&
       yarn lint && 
       yarn android:build
