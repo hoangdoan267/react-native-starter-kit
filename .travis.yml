@@ -9,6 +9,7 @@ jobs:
   - stage: Build Android 🤖
     if: branch = master OR branch = develop
     language: android
+    jdk: oraclejdk8
     dist: trusty
     android:
       components:
@@ -28,6 +29,8 @@ jobs:
       - echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" > "$ANDROID_HOME/licenses/android-sdk-license"
       - openssl aes-256-cbc -K $encrypted_e47b4d652ad1_key -iv $encrypted_e47b4d652ad1_iv -in production.zip.enc -out production.zip -d
       - unzip production.zip
+      # https://github.com/wix/react-native-interactable/issues/146
+      - npm config set script-shell "/bin/bash"
     env: 
       - SUPPLY_PACKAGE_NAME="com.reactnative.starterkit"
     install: yarn
