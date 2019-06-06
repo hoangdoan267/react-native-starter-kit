@@ -8,7 +8,7 @@ jobs:
   include:
   - stage: Build
     script: 
-      unzip production.zip &&
+      unzip -o production.zip &&
       yarn job production &&
       yarn lint && 
       yarn test
