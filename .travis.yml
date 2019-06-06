@@ -39,8 +39,10 @@ jobs:
       - cd ios && pod install --repo-update && cd ..
     install: yarn
     script: 
-      yarn job production &&
-      yarn ios:testflight
+      #itms is needed, otherwise altool will not work correctly
+      ln -s "/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool" /usr/local/bin/altool &&
+      ln -s "/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/itms" /usr/local/bin/itms &&
+      altool --upload-app -f "$mobile.ipa" -u $PILOT_USERNAME -p $FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD
   - stage: Build Android
     if: branch = master # OR branch = develop
     language: android
