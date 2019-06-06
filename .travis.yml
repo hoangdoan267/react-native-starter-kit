@@ -41,7 +41,7 @@ jobs:
     script: 
       yarn job production &&
       yarn lint && 
-      yarn android:build
+      yarn android:alpha
   - stage: Release Android to Alpha
     if: branch = master
     language: android

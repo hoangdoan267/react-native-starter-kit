@@ -5,27 +5,12 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Switch to ios build lane" time="0.004232">
+      <testcase classname="fastlane.lanes" name="0: gradle" time="35.712613">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: Switch to ios certificates lane" time="0.000412">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="2: match" time="1.615985">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="3: gym" time="465.03622">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="4: pilot" time="463.924094">
+      <testcase classname="fastlane.lanes" name="1: gradle" time="213.601435">
         
       </testcase>
     
