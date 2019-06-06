@@ -18,9 +18,10 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.hmap
-*.ipa
+# *.ipa
 *.xcuserstate
 project.xcworkspace
+*.dSYM.zip
 
 # Android/IntelliJ
 #

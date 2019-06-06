@@ -93,9 +93,17 @@ platform :ios do
     )
   end
 
+  desc 'Upload symbols to Crashlytics.'
+  lane :uploadToCrashlytics do
+    upload_symbols_to_crashlytics(
+      dsym_path: "./mobile.app.dSYM.zip",
+      binary_path: "./mobile.ipa"
+    )
+  end
+  
   desc 'Ship to Appstore Testflight.'
   lane :uploadToTestflight do
-    build
+    # build
     pilot(
       skip_waiting_for_build_processing: true
     )
