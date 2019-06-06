@@ -58,10 +58,28 @@ platform :ios do
   # iOS Lanes
   desc 'Fetch certificates and provisioning profiles'
   lane :certificates do
+    # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
+    create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+ 
+    unlock_keychain(
+      path: ENV["MATCH_KEYCHAIN_NAME"],
+      add_to_search_list: :replace,
+      password: ENV['MATCH_KEYCHAIN_PASSWORD']
+    )
+
     match(
       readonly: true, 
       type: 'appstore',
-      storage_mode: 'git'
+      storage_mode: 'git',
+      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"]
     )
   end
 
