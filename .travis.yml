@@ -6,12 +6,12 @@ before_install:
 install: yarn
 jobs:
   include:
-  - stage: Build
-    script: 
-      unzip -o production.zip &&
-      yarn job production &&
-      yarn lint && 
-      yarn test
+  # - stage: Build
+  #   script: 
+  #     unzip -o production.zip &&
+  #     yarn job production &&
+  #     yarn lint && 
+  #     yarn test
   - stage: Build Android 🤖
     if: branch = master OR branch = develop
     language: android
@@ -29,4 +29,8 @@ jobs:
       - bundle install
     env: 
       - SUPPLY_PACKAGE_NAME="com.reactnative.starterkit"
-    script: yarn android:build
+    script: 
+      unzip -o production.zip &&
+      yarn job production &&
+      yarn lint && 
+      yarn android:build
