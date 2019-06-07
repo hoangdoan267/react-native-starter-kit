@@ -46,3 +46,6 @@
 20: immer for state mutation (done)
 ***21: check latest version (pending)
     https://github.com/kimxogus/react-native-version-check
+21: travis ci
+    zip -r production.zip app_configuration/environments/production
+    unzip production.zip

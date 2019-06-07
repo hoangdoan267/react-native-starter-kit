@@ -18,9 +18,10 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.hmap
-*.ipa
+# *.ipa
 *.xcuserstate
 project.xcworkspace
+*.dSYM.zip
 
 # Android/IntelliJ
 #
@@ -64,6 +65,7 @@ Pods
 
 # credentials
 app_configuration/environments/production
+production.zip
 android/*/*.keystore
 android/*/google-services.json
 fastlane/googlePlaySecretKey.json
