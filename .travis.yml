@@ -91,7 +91,6 @@ jobs:
         - extra-google-m2repository
         - extra-android-m2repository
     before_script:
-      - nvm install 8.5.0
       - gem install bundler
       - bundle install
       # https://stackoverflow.com/questions/54273412/failed-to-install-the-following-android-sdk-packages-as-some-licences-have-not-b
