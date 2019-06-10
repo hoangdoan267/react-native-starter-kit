@@ -1,5 +1,7 @@
 import firebase from 'react-native-firebase';
-
+import { Client } from 'bugsnag-react-native';
+import { config } from '@app/config';
+const bugsnag = new Client(config.bugsnagAPIKey);
 export const recordError = (error: Error) => {
     try {
         if (__DEV__) {
@@ -14,6 +16,7 @@ export const recordError = (error: Error) => {
             firebase.crashlytics().setStringValue('stack', `${error.stack}`);
             firebase.crashlytics().setStringValue('message', `${error.message}`);
             firebase.crashlytics().recordError(0, `RN Fatal: ${error.message}`);
+            bugsnag.notify(error);
         }
     } catch {
         // do nothing
