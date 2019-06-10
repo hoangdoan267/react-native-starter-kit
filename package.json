@@ -4,6 +4,7 @@
     "@react-native-community/blur": "^3.3.1",
     "@rematch/core": "^1.1.0",
     "@rematch/persist": "^1.1.6",
+    "bugsnag-react-native": "^2.20.0",
     "formik": "^1.5.4",
     "i18next": "^15.0.9",
     "immer": "^3.1.1",

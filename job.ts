@@ -57,6 +57,15 @@ export const updateConfig = (environment: string = 'default') => {
             ],
         },
         {
+            src: path.resolve(__dirname, `./android/app/src/main/AndroidManifest.xml`),
+            replaces: [
+                {
+                    old: /<meta-data android:name=\"com.bugsnag.android.API_KEY\">[\w, ,.,-]*<\/string>/,
+                    new: `<meta-data android:name="com.bugsnag.android.API_KEY" android:value="${config.bugsnagAPIKey}" />`
+                }
+            ]
+        },
+        {
             src: path.resolve(__dirname, `./android/app/src/main/res/values/strings.xml`),
             replaces: [
                 {
@@ -66,10 +75,6 @@ export const updateConfig = (environment: string = 'default') => {
                 {
                     old: /<string name=\"facebook_app_id\">[\w]*<\/string>/,
                     new: `<string name="facebook_app_id">${jobConfig.fb.id}</string>`,
-                },
-                {
-                    old: /<string name=\"fb_login_protocol_scheme\">[\w]*<\/string>/,
-                    new: `<string name="fb_login_protocol_scheme">fb${jobConfig.fb.id}</string>`,
                 }
             ],
         },
@@ -100,6 +105,10 @@ export const updateConfig = (environment: string = 'default') => {
                     old: /<key>FacebookDisplayName<\/key>[\n,	, ]*<string>[\w, ,.,-,.]*<\/string>/,
                     new: `<key>FacebookDisplayName</key>\n	<string>${jobConfig.ios.appName}</string>`,
                 },
+                {
+                    old: /<key>BugsnagAPIKey<\/key>[\n,	, ]*<string>[\w, ,.,-,.]*<\/string>/,
+                    new: `<key>BugsnagAPIKey</key>\n <string>${config.bugsnagAPIKey}</string>`
+                }
             ],
         },
         {

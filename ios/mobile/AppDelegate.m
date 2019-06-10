@@ -21,6 +21,7 @@
 #import <RNGoogleSignin/RNGoogleSignin.h>
 #import "../../node_modules/react-native-orientation-locker/iOS/RCTOrientation/Orientation.h"
 #import "../../node_modules/react-native-splash-screen/ios/RNSplashScreen.h"
+#import "../../node_modules/bugsnag-react-native/cocoa/BugsnagReactNative.h"
 
 @implementation AppDelegate
 
@@ -29,6 +30,7 @@
   // Firebase
   [FIRApp configure];
   [RNFirebaseNotifications configure];
+  [BugsnagReactNative start];
   
   // React native navigation
   NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];

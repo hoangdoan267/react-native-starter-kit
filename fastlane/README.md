@@ -50,6 +50,11 @@ Fetch certificates and provisioning profiles
 fastlane ios build
 ```
 Build the iOS application.
+### ios uploadToCrashlytics
+```
+fastlane ios uploadToCrashlytics
+```
+Upload symbols to Crashlytics.
 ### ios uploadToTestflight
 ```
 fastlane ios uploadToTestflight

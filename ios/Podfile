@@ -32,6 +32,8 @@ target 'mobile' do
   # pod 'CodePush', :path => '../node_modules/react-native-code-push'
   # pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  # pod 'BugsnagReactNative', :path => '../node_modules/bugsnag-react-native'
+
   # target 'mobileTests' do
   #   inherit! :search_paths
   #   # Pods for testing

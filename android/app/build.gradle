@@ -1,6 +1,8 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.bugsnag.android.gradle'
 apply plugin: "io.fabric"
 apply plugin: "com.google.firebase.firebase-perf"
+
 import com.android.build.OutputFile
 
 /**
@@ -180,6 +182,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':bugsnag-react-native')
     // fix build error
     components.all {
         allVariants {

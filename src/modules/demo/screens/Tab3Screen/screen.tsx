@@ -19,6 +19,12 @@ export const Screen = ({ dolphins, incrementDolphins, incrementDolphinsAsync }: 
         return b;
     });
 
+    const testBugSnagCrash = () => {
+        const a = null;
+        const b = (a as any).crash;
+        return b;
+    };
+
     return <BaseLayout>
         <Text bg-red30 blue50 text50>Tab3 - dolphins</Text>
         <Text bg-red30 blue50 text80>dolphins: {dolphins.count}</Text>
@@ -33,6 +39,9 @@ export const Screen = ({ dolphins, incrementDolphins, incrementDolphinsAsync }: 
         </View>
         <View marginT-50 center>
             <Button text200 white label={'Test Firebase Crash Catch'} onPress={testCrashCatch} />
+        </View>
+        <View marginT-50 center>
+            <Button text200 white label={'Test BugSnag Crash Catch'} onPress={testBugSnagCrash} />
         </View>
     </BaseLayout>;
 };
