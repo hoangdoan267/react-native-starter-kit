@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Mobile Starter Kit</string>
+	<string>Your app name</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Mobile Starter Kit</string>
+	<string>Your app name</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -29,7 +29,7 @@
 			<string>fburl</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1842008296094931</string>
+				<string>fbyourfbid</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,7 +39,7 @@
 			<string>googleurl</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.809846546437-qfbpd0cstf8f5m32p7eg6kjlk4je4fsp</string>
+				<string></string>
 			</array>
 		</dict>
 	</array>
@@ -48,9 +48,9 @@
 	<key>CodePushDeploymentKey</key>
 	<string>deployment-key-here</string>
 	<key>FacebookAppID</key>
-	<string>1842008296094931</string>
+	<string>yourfbid</string>
 	<key>FacebookDisplayName</key>
-	<string>Mobile Starter Kit</string>
+	<string>Your app name</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -96,8 +96,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-  <key>BugsnagAPIKey</key>
-  <string>YOUR-API-KEY-HERE</string>
 	<false/>
+  	<key>BugsnagAPIKey</key>
+  	<string>YOUR-API-KEY-HERE</string>
 </dict>
 </plist>
